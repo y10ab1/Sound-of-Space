@@ -21,7 +21,7 @@ function setup() {
 
     // webcam capture
     video = createCapture(VIDEO);
-    video.size(windowWidth, windowHeight);
+    video.size(800, 800);
     video.hide();
 
     carrier = new p5.Oscillator(); // connects to master output by default
