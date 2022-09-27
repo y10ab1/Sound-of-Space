@@ -14,7 +14,7 @@ let osc, fft;
 
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
+    createCanvas(800, 800);
 
     // an initial color to look for
     colorToMatch = color(0, 0, 0);
