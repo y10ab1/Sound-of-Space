@@ -27,9 +27,10 @@ function setup() {
 
     carrier = new p5.Oscillator(); // connects to master output by default
     carrier.start();
+    getAudioContext().resume();
+
     carrier.freq(340);
     carrier.amp(0);
-    getAudioContext().resume();
 
     // carrier's amp is 0 by default, giving our modulator total control
 
@@ -37,10 +38,11 @@ function setup() {
     modulator = new p5.Oscillator('triangle');
     modulator.disconnect();  // disconnect the modulator from master output
     modulator.start();
+    getAudioContext().resume();
+
     modulator.freq(5);
     modulator.amp(0);
 
-    getAudioContext().resume();
     // Modulate the carrier's amplitude with the modulator
     reverb = new p5.Reverb();
 
