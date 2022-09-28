@@ -38,6 +38,7 @@ function setup() {
     modulator.freq(5);
     modulator.amp(0);
 
+    getAudioContext().resume();
     // Modulate the carrier's amplitude with the modulator
     reverb = new p5.Reverb();
 
