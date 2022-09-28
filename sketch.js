@@ -14,14 +14,15 @@ let osc, fft;
 
 
 function setup() {
-    createCanvas(800, 800);
+
+    createCanvas(640, 640);
 
     // an initial color to look for
     colorToMatch = color(0, 0, 0);
 
     // webcam capture
     video = createCapture(VIDEO);
-    video.size(800, 800);
+    video.size(640, 640);
     video.hide();
 
     carrier = new p5.Oscillator(); // connects to master output by default
