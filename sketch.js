@@ -29,6 +29,8 @@ function setup() {
     carrier.start();
     carrier.freq(340);
     carrier.amp(0);
+    getAudioContext().resume();
+
     // carrier's amp is 0 by default, giving our modulator total control
 
 
@@ -86,8 +88,8 @@ function draw() {
         endShape();
 
         colorfreq = colorToMatch[0] + colorToMatch[1] + colorToMatch[2]
-        let freq = map(firstPx.x / 2 + colorfreq / 5, 0, width, 40, 880);
-        modulator.freq(freq);
+        let frequency = map(firstPx.x / 2 + colorfreq / 5, 0, width, 40, 880);
+        modulator.freq(frequency);
 
         let amp = map(firstPx.y, 0, height, 1, 0.01);
         modulator.amp(amp, 0.01);
