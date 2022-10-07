@@ -25,7 +25,7 @@ function setup() {
     video.size(640, 640);
     video.hide();
 
-    carrier = new p5.Oscillator(); // connects to master output by default
+    carrier = new Tone.Oscillator(); // connects to master output by default
     carrier.start();
     getAudioContext().resume();
 
@@ -35,7 +35,7 @@ function setup() {
     // carrier's amp is 0 by default, giving our modulator total control
 
 
-    modulator = new p5.Oscillator('triangle');
+    modulator = new Tone.Oscillator('triangle');
     modulator.disconnect();  // disconnect the modulator from master output
     modulator.start();
     getAudioContext().resume();
@@ -44,7 +44,7 @@ function setup() {
     modulator.amp(0);
 
     // Modulate the carrier's amplitude with the modulator
-    reverb = new p5.Reverb();
+    reverb = new Tone.Reverb();
 
     carrier.amp(modulator);
     reverb.process(carrier, 4, 0.2);
@@ -52,7 +52,7 @@ function setup() {
     reverb.amp(4); // turn it up!
 
     // create an fft to analyze the audio
-    fft = new p5.FFT();
+    fft = new Tone.FFT();
 
 
 }
