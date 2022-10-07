@@ -1,5 +1,4 @@
 
-import Tone from 'tone';
 // how much wiggle-room is allowed when
 // matching the color?
 let tolerance = 5;
